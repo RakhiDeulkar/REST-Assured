@@ -1,0 +1,26 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+           xmlns:tns="http://tempuri.org/"
+           targetNamespace="http://schemas.xmlsoap.org/soap/envelope/"
+           elementFormDefault="qualified">
+
+  <!-- Import the tempuri namespace -->
+  <xs:import namespace="http://tempuri.org/" schemaLocation="AddResponse.xsd"/>
+
+  <!-- SOAP envelope structure -->
+  <xs:element name="Envelope">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Body">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="http://tempuri.org/" processContents="lax"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:anyAttribute namespace="##any"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
